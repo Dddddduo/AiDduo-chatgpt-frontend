@@ -16,7 +16,7 @@
 - **Volar**：一个 VSCode 插件，用于 Vue 3，提供改进的 TypeScript 支持和 IDE 功能。
 
 ### 后端
-- **Java 1.7**：后端使用 Java 1.7 开发，确保与老旧系统兼容。
+- **Java 17**：后端使用 Java 17 开发，确保与老旧系统兼容。
 - **Spring Boot 3.5**：一个流行的框架，用于构建基于 Java 的 web 应用和微服务。
 - **阿里云模型（Alibaba AI）**：用于自然语言处理和聊天型 AI 交互。
 - **Claude AI**：集成的 Claude AI 提供更智能的对话能力。
