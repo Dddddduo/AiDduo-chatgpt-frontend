@@ -1,5 +1,3 @@
-# new1
-
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
@@ -27,3 +25,6 @@ npm run dev
 ```sh
 npm run build
 ```
+效果展示
+![image](https://github.com/user-attachments/assets/bb02b051-45e9-49bd-9070-aec96d673d91)
+
