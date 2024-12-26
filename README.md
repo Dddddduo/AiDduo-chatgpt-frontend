@@ -38,9 +38,7 @@
     ```
 
 ## 部署
-
-点击访问
-[AiDduo ChatGPT]([https://github.com/Dddddduo/AiDduo-chatgpt-frontend](http://gpt.gczdy.cn/))
+[[线上地址](http://gpt.gczdy.cn/)
 
 ## 截图
 ![image](https://github.com/user-attachments/assets/2b541647-052f-4db6-87f2-7e25fed0215a)
