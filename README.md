@@ -1,4 +1,4 @@
-# AiDduo ChatGPT
+# AiDduo ChatGPT 智能聊天机器人
 
 ## 项目简介
 
