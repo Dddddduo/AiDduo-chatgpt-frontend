@@ -61,7 +61,7 @@ export default {
 
         return {
             renderedMessage,
-            botAvatar: 'https://ooo.0x0.ooo/2024/12/26/OEh8Cq.jpg',
+            botAvatar: 'https://uploadfiles.nowcoder.com/images/20250705/619886673_1751726483574/E2BB4E6C0666DF6F99D6A2A58463BC37',
             redirectUrl: 'https://gczdy.cn',
         }
     }

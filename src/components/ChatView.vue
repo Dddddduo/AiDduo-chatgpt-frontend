@@ -63,8 +63,8 @@
                 <footer class="bg-gray-50 p-4 border-t border-gray-200">
                     <div class="flex flex-col items-center space-y-2">
                         <p class="text-gray-600 text-sm hover:text-gray-800 transition-colors">
-                            <a href="https://bailian.console.aliyun.com" target="_blank">
-                                Alibaba Cloud Tongyi Qianwen AI Model Support
+                            <a href="https://api-docs.deepseek.com/zh-cn/news/news250120" target="_blank">
+                                DeepSeek AI Model Support
                             </a>
                         </p>
                         <p class="text-gray-500 text-xs">
@@ -138,35 +138,42 @@ export default {
             isTyping.value = true
             await scrollToBottom()
 
-            try {
-                const response = await fetch(
-                    `http://gpt.gczdy.cn:8080/dduoai/chat?message=${encodeURIComponent(message)}`,
-                    { method: 'GET' }
-                )
+          try {
+            const response = await fetch(
+                `http://gpt.gczdy.cn:8210/dduoai/chat?message=${encodeURIComponent(message)}`,
+                { method: 'GET' }
+            );
+            console.log('response', response);
 
-                if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`)
+            if (!response.ok) throw new Error(`HTTP error! Status: ${response.status}`);
 
-                const data = await response.text()
-                messages.value.push({
-                    text: data,
-                    sender: 'bot',
-                    timestamp: new Date().toISOString()
-                })
-            } catch (error) {
-                messages.value.push({
-                    text: '请求失败，请稍后再试',
-                    sender: 'bot',
-                    timestamp: new Date().toISOString()
-                })
-            } finally {
+            // 解析 JSON 响应
+            const data = await response.json();
+
+            // 提取机器人回复的内容
+            const botMessage = data.choices[0]?.message?.content || '（机器人回复为空）';
+
+            messages.value.push({
+              text: botMessage,
+              sender: 'bot',
+              timestamp: new Date().toISOString()
+            });
+          } catch (error) {
+            console.error('请求出错:', error);
+            messages.value.push({
+              text: `请求失败: ${error.message}`,
+              sender: 'system',
+              timestamp: new Date().toISOString()
+            });
+          }finally {
                 isTyping.value = false
                 await scrollToBottom()
             }
         }
 
-        onMounted(() => {
+      onMounted(() => {
             messages.value.push({
-                text: '你好,我是多多搭建的聊天机器人,我来自北华大学计算机科学技术学院ACM-ICPC程序设计工作室,你可以问我任何问题。喵~',
+                text: '嗷呜,今天想问点什么呢喵~',
                 sender: 'bot',
                 timestamp: new Date().toISOString()
             })
